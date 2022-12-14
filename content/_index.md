@@ -68,6 +68,12 @@ A lot of the "tidiness" that I seek has to do with strong limits to the amount o
 
 I put all my custom brand colors in <code>colors.scss</code> as SASS variables, import them where needed with <code>@imports "colors";</code> and that keeps things tidy and easy to tweak. I prefix the variables with <code>$brand-</code> for easy grepping to find all use of custom colors.
 
+## Mobile Navigation Menu
+
+I kind of hate all mobile navigation and hamburger menus, but couldn't commit to making the hamburger menu just anchor link to the footer navigation and be done with it, so I implemented one. There's not too much special here you won't find clicking around a web search, but I do want to point out that &amp;equiv; and &amp;times; are great HTML escaped elements to use for your open/close buttons and there's no need for images, SVGs, or bizarre creation of hamburger menu out of div tags and CSS (which I definitely saw in some of the more terrible samples out there).
+
+I share content for both the nav popup menu and the site footer with a zola/terra partial in <code>templates/partials/nav.html</code>. There's some fancy <code>a + a</code> CSS selector stuff to automatically separate the footer links with a vertical bar which is pretty neat.
+
 ## Responsive Photo Grid Challenge
 
 So far our content has been pretty table-stakes stuff you must address to have a realistic useful web site. For a specific site I was working on, I had a photo grid challenge that I was able to address with CSS Grid and <code>auto-fill</code>, so I'll show it off here just because it's kind of neat. It makes a seamless grid with as many columns/rows as the screen will fit. I don't fully understand all the limitations, but I made all the images 4:3 aspect ratio, but not all identical size, and I used <code>place-items: stretch</code> and it seems to work.

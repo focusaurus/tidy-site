@@ -16,14 +16,3 @@ footer.grid {
   @include centered-column;
 }
 
-footer nav {
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  a + a {
-    &:before {
-      content: " | ";
-    }
-  }
-}

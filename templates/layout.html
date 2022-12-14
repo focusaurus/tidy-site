@@ -42,20 +42,19 @@ Omitted to limit scope of this project
   </head>
   <body>
 
-  {#
     <button class="open-nav">&equiv;</button>
     <nav class="menu">
       <button class="close-nav">&times;</button>
       {% include "partials/nav.html" -%}
     </nav>
-#}
+
     <main>{% block main -%} {% endblock -%}</main>
 
     <footer class="grid">
       {% block footer -%}
-      {# <nav>{% include "partials/nav.html" -%}</nav> #}
+      <nav>{% include "partials/nav.html" -%}</nav>
       {% endblock -%}
     </footer>
-    {# <script type="text/javascript" src="/navigation.js"></script> #}
+    <script type="text/javascript" src="/navigation.js"></script>
   </body>
 </html>
