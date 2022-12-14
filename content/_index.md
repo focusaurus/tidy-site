@@ -7,6 +7,17 @@ title = "Home"
 
 This site serves to demonstrate how I set up a fairly minimal static website that ticks all of my back-end engineer boxes. The source code is over at [github.com/focusaurus/tidy-site](https://github.com/focusaurus/tidy-site).
 
+## Tech Stack
+
+* [zola](https://getzola.org) static site generator
+  * Uses nice [tera](https://tera.netlify.app/) templates
+    * I like the inheritence and block override mechanism
+    * Useful filters
+  * shortcodes a la WordPress are great
+  * It's in rust and I'm biased toward rust
+* [SCSS](https://sass-lang.com/) for CSS nesting and processing
+* [markdown](https://www.markdownguide.org/) for simple text content markup
+
 ## Inspiration
 
 While I admire the minimalism, I can't quite bring myself to go full [Dan Luu mode](https://danluu.com/) with almost no CSS. I love the look of [Kind Engineering](https://kind.engineering), which I was hoping to study and copy, but when I viewed source it seems to be a squarespace template full of limitless complexity, breakpoints galore, <code>!important</code>, and generated code so I'll take the design and leave the implementation.
