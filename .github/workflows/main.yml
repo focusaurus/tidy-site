@@ -1,0 +1,4 @@
+- name: Zola Deploy to Pages
+  # You may pin to the exact commit or the version.
+  # uses: shalzz/zola-deploy-action@60ff9c1e7b855b0960dc792e5b14f1dabc908531
+  uses: shalzz/zola-deploy-action@v0.12.0
