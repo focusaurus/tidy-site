@@ -1,0 +1,57 @@
+$breakpoint: 42em;
+$pad: 1em;
+
+// Primary page layout is a single column with content centered horizontally.
+// It is mobile-first and as screen size allows additional columns are introduced side by side
+@mixin centered-column {
+  display: grid;
+  // This unquote call is to work around a libsass bug.
+  // In real SCSS/CSS, the unquote is not needed.
+  grid-template-columns: unquote("min(90vw, 40em)");
+  justify-content: center; // unclear if this is needed/correct
+  justify-items: center;
+  padding: $pad $pad;
+  ul {
+    // Necessary because list bullets are laid out weird
+    padding-left: $pad;
+  }
+
+
+  p, blockquote {
+    // This only applies for tiny paragraphs that don't even
+    // fill their first line. They look a bit weird centered,
+    // so left align them.
+    justify-self: left;
+  }
+
+  // I don't like this but it's necessary to keep stuff like
+  // the mailchimp div from overflowing the grid and forcing
+  // horizontal scrollbars
+  * {
+    max-width: unquote("min(100%, 40em)");
+  }
+}
+
+@mixin float($side) {
+  display: block;
+  @media (min-width: $breakpoint) {
+    display: initial;
+    float: $side;
+    @if $side == right {
+      margin-left: $pad;
+    } @else {
+      margin-right: $pad * 2;
+    }
+    max-width: 50%;
+  }
+}
+
+canvas,
+iframe,
+select,
+textarea,
+img,
+video,
+svg {
+  max-width: 100%;
+}

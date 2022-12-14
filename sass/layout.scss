@@ -1,0 +1,29 @@
+@import "core-layout";
+
+p {
+  margin: 0;
+  margin-bottom: 0.6em;
+}
+
+section.grid {
+  @include centered-column;
+  img {
+    margin-bottom: $pad;
+  }
+}
+
+footer.grid {
+  @include centered-column;
+}
+
+footer nav {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a + a {
+    &:before {
+      content: " | ";
+    }
+  }
+}

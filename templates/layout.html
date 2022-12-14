@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block meta -%}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Put a useful meta description here for search engines etc"
+    />
+    <meta
+      name="keywords"
+      content="static site generator backend developer tidy zola CSS3 grid tera template markdown"
+    />
+
+    {% endblock meta -%} {# Formatting is weird here to avoid leading/trailing
+    whitespace within tags #}
+    <title>
+      {% block title -%}{% if page.title is defined -%}{{ page.title }}{%- endif
+      -%}{% if section.title is defined -%}{{ section.title }}{% endif -%}|Tidy Site
+      {% endblock title -%}
+    </title>
+
+    <link rel="stylesheet" href="/screen.css" />
+
+    {# TODO #}
+    {# <!-- Favicon --> #}
+    {# <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> #}
+    {# <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" /> #}
+    {# <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> #}
+    <script>
+      {% block scripts -%}
+      {% endblock scripts -%}
+    </script>
+    {% block opengraph -%}
+
+{#
+throw your opengraph meta tags for nice previews on social media here.
+Omitted to limit scope of this project
+#}
+    {% endblock opengraph -%}
+  </head>
+  <body>
+
+  {#
+    <button class="open-nav">&equiv;</button>
+    <nav class="menu">
+      <button class="close-nav">&times;</button>
+      {% include "partials/nav.html" -%}
+    </nav>
+#}
+    <main>{% block main -%} {% endblock -%}</main>
+
+    <footer class="grid">
+      {% block footer -%}
+      {# <nav>{% include "partials/nav.html" -%}</nav> #}
+      {% endblock -%}
+    </footer>
+    {# <script type="text/javascript" src="/navigation.js"></script> #}
+  </body>
+</html>
