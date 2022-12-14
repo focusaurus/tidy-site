@@ -3,21 +3,21 @@
 
 // This is a recent version of the open source CSS normalize project
 // https://necolas.github.io/normalize.css/
-@import "core-normalize";
+@import "_core-normalize";
 
 // This is core layout styles that can be copied as-is to any similar site.
-@import "core-layout";
+@import "_core-layout";
 
-@import "core-videos";
+@import "_core-videos";
 
 // This non-core layout has any styles that are custom for this site
-@import "layout";
-@import "images";
-@import "fonts";
-@import "navigation";
+@import "_layout";
+@import "_images";
+@import "_fonts";
+@import "_navigation";
 
 // Any styles specific to a particular page go in a corresponding file.
-@import "index";
+@import "_index";
 
 // If you have any styles for this site overall, they can go directly in this file.
 code {
