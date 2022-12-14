@@ -124,3 +124,10 @@ So far our content has been pretty table-stakes stuff you must address to have a
 </section>
 
 Code: {{ github(path="sass/_images.scss") }}
+
+<section class="grid">
+
+## Known Issues
+
+* Everywhere you see <code>unquote()</code> in the SCSS, disregard it. It's working around [this bug in zola/libsass](https://github.com/getzola/zola/issues/2022). It'll probably be a long time, but eventually I expect zola to switch to bundling a rust-based SASS implementation and hopefully this issue gets resolved.
+</section>
