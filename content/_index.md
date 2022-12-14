@@ -93,7 +93,7 @@ Code: {{ github(path="tempates/shortcodes/youtube.html") }} and  {{ github(path=
 
 <div class="demo-float">
 <img src="https://placekitten.com/320/350">
-<p>Just for funzies, we can do a responsive image float, too. This starts mobile-first as single column, but on bigger screens the image floats on the right. SASS has a nice way to parameterize this mixin for left and right floats.</p>
+<p>Just for funzies, we can do a responsive image float, too. This starts mobile-first as single column, but on bigger screens the image floats on the right. SASS has a nice way to parameterize this mixin for left and right floats. I should also note that this is the <em>ONLY</em> use of CSS media query breakpoints I use on this site.</p>
 </div>
 
 Code: {{ github(path="sass/_core-layout.scss") }} the float mixin.
