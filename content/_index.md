@@ -5,11 +5,11 @@ title = "Home"
 
 # Welcome to Tidy Site
 
-This site serves to demonstrate how I set up a fairly minimal static website that ticks all of my back-end engineer boxes.
+This site serves to demonstrate how I set up a fairly minimal static website that ticks all of my back-end engineer boxes. The source code is over at [github.com/focusaurus/tidy-site](https://github.com/focusaurus/tidy-site).
 
 ## Inspiration
 
-While I admire the minimalism, I can't quite bring myself to go full [Dan Luu mode](https://danluu.com/). I love the look of [Kind Engineering](https://kind.engineering), which I was hoping to study and copy, but when I viewed source it seems to be a squarespace template full of limitless complexity, breakpoints galore, <code>!important</code>, and generated code so I'll take the design and leave the implementation.
+While I admire the minimalism, I can't quite bring myself to go full [Dan Luu mode](https://danluu.com/) with almost no CSS. I love the look of [Kind Engineering](https://kind.engineering), which I was hoping to study and copy, but when I viewed source it seems to be a squarespace template full of limitless complexity, breakpoints galore, <code>!important</code>, and generated code so I'll take the design and leave the implementation.
 
 ## Semantic HTML (mostly)
 
@@ -17,7 +17,9 @@ A lot of the "tidiness" that I seek has to do with strong limits to the amount o
 
 ## Keeping Colors Tidy
 
-I put all my custom brand colors in <code>colors.scss</code> as SASS variables, import them where needed with <code>@imports "colors";</code> and that keeps things tidy and easy to tweak. I prefix the variables with <code>$brand-</code> for easy grepping to find all use of custom colors.
+I put all my custom brand colors in / as SASS variables, import them where needed with <code>@imports "colors";</code> and that keeps things tidy and easy to tweak. I prefix the variables with <code>$brand-</code> for easy grepping to find all use of custom colors.
+
+Code: {{ github(path="sass/_colors.scss") }}
 
 ## Mobile-first and Responsive
 
@@ -36,7 +38,7 @@ I put all my custom brand colors in <code>colors.scss</code> as SASS variables, 
   
 ## Layout Basics
 
-The file "sass/core-layout.scss" handles our basic solution. There's a SCSS mixin called `centered-column` which uses CSS grid and a clever `max-width` to make our opt-in center column work properly.
+The file {{ github(path="sass/_core-layout.scss") }} handles our basic solution. There's a SCSS mixin called `centered-column` which uses CSS grid and a clever `max-width` to make our opt-in center column work properly.
 
 ## Font Sizes
 
@@ -47,6 +49,7 @@ Happily though, I think the answer might be as simple as: 18px for body and larg
 Someone prove me wrong or something. I can read this site fine on phones, tablets, and desktops in portrait and landscape mode and there's no deep magic going on with font sizes.
 
 ## Full Width Content
+
 </section>
 
 <section style="background-color: #ddd; padding: 1em;">
@@ -71,6 +74,8 @@ The linked article will explain the HTML and CSS necessary to get this to work. 
 
 One thing that I love from zola is it's [shortcodes](https://www.getzola.org/documentation/content/shortcodes/) feature (borrowed from WordPress), so to embed a video in a markdown file, I just need <code>youtube(id="FEnRpy9Xfes")</code> inside a tera template snippet. So tidy! This also comes in completely essential in terms of DRY when you have dozens of these sprinkled across your site's content and you decide you want to tweak the HTML markup for them. Life saver.
 
+Code: {{ github(path="tempates/shortcodes/youtube.html") }} and  {{ github(path="sass/_videos.scss") }}
+
 {{ youtube(id="FEnRpy9Xfes") }}
 
 ## Image Float Option
@@ -80,11 +85,15 @@ One thing that I love from zola is it's [shortcodes](https://www.getzola.org/doc
 <p>Just for funzies, we can do a responsive image float, too. This starts mobile-first as single column, but on bigger screens the image floats on the right. SASS has a nice way to parameterize this mixin for left and right floats.</p>
 </div>
 
+Code: {{ github(path="sass/_core-layout.scss") }} the float mixin.
+
 ## Mobile Navigation Menu
 
 I kind of hate all mobile navigation and hamburger menus, but couldn't commit to making the hamburger menu just anchor link to the footer navigation and be done with it, so I implemented one. There's not too much special here you won't find clicking around a web search, but I do want to point out that &amp;equiv; and &amp;times; are great HTML escaped elements to use for your open/close buttons and there's no need for images, SVGs, or bizarre creation of hamburger menu out of div tags and CSS (which I definitely saw in some of the more terrible samples out there).
 
-I share content for both the nav popup menu and the site footer with a zola/terra partial in <code>templates/partials/nav.html</code>. There's some fancy <code>a + a</code> CSS selector stuff to automatically separate the footer links with a vertical bar which is pretty neat.
+I share content for both the nav popup menu and the site footer with a zola/terra partial in {{ github(path="templates/partials/nav.html") }}. There's some fancy <code>a + a</code> CSS selector stuff to automatically separate the footer links with a vertical bar which is pretty neat.
+
+Code: {{ github(path="sass/_navigation.scss") }}
 
 ## Responsive Photo Grid Challenge
 
@@ -102,3 +111,5 @@ So far our content has been pretty table-stakes stuff you must address to have a
 <img src="https://placekitten.com/600/450">
 <img src="https://placekitten.com/800/600">
 </section>
+
+Code: {{ github(path="sass/_images.scss") }}
