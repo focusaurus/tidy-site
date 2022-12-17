@@ -28,7 +28,7 @@ A lot of the "tidiness" that I seek has to do with strong limits to the amount o
 
 ## Keeping Colors Tidy
 
-I put all my custom brand colors in / as SASS variables, import them where needed with <code>@imports "colors";</code> and that keeps things tidy and easy to tweak. I prefix the variables with <code>$brand-</code> for easy grepping to find all use of custom colors.
+I put all my custom brand colors in as SASS variables, import them where needed with <code>@import "colors";</code> and that keeps things tidy and easy to tweak. I prefix the variables with <code>$brand-</code> for easy grepping to find all use of custom colors.
 
 Code: {{ github(path="sass/_colors.scss") }}
 
