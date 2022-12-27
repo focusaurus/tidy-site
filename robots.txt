@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://focusaurus.github.io/tidy-site/sitemap.xml
