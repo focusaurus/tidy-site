@@ -16,8 +16,8 @@ $pad: 1em;
     padding-left: $pad;
   }
 
-
-  p, blockquote {
+  p,
+  blockquote {
     // This only applies for tiny paragraphs that don't even
     // fill their first line. They look a bit weird centered,
     // so left align them.
@@ -29,6 +29,17 @@ $pad: 1em;
   // horizontal scrollbars
   * {
     max-width: unquote("min(100%, 40em)");
+  }
+
+  // Work around markdown wrapping images
+  // in paragraphs. Keep narrow images centered.
+  p > img:only-child {
+    display: block;
+    margin: 0 auto;
+  }
+
+  p:has(img:only-child) {
+    width: 100%;
   }
 }
 

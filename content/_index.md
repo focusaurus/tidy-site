@@ -77,6 +77,14 @@ Here's a 1200px placekitten to demonstrate.
 
 ![](https://placekitten.com/1200)
 
+And here's a narrow placekitten with an image tag as a direct child of our section container that should be centered.
+
+<img src="https://placekitten.com/290">
+
+To handle markdown unfortunately wrapping images in paragraph tags, we need some additional styles to center this narrow image.
+
+![](https://placekitten.com/295)
+
 ## Layout for videos
 
 Youtube videos are trickier as they embed with the `iframe` tag. I [found a solution in this article](https://techstacker.com/how-to-responsive-youtube-videos/) to make them responsive. It's hacky since it involves some empty element nonsense, but it works.
