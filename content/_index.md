@@ -136,6 +136,10 @@ So far our content has been pretty table-stakes stuff you must address to have a
 Code: {{ github(path="sass/_images.scss") }}
 
 
+<section class="grid">
+
 ## Known Issues
 
 None remaining! My issues with responsive videos and libsass workarounds are all solved with zola 0.17.2.
+
+</section>
