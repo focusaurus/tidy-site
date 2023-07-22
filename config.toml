@@ -4,6 +4,9 @@ base_url = "https://focusaurus.github.io/tidy-site"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
+description = "Sample responsive static web site with clean HTML and CSS"
+
+
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
