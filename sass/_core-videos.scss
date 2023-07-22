@@ -2,11 +2,6 @@
  * https://dev.to/deammer/embed-responsive-youtube-videos-in-2021-5dkh
  */
 
-/* This file is plain CSS instead of .scss
- * because scss itself doesn't support slash notation
- * we need for aspect-ratio and zola/grass don't seem
- * to handle the list.slash(16, 9); helper function notation either.
- */
 .video-landscape {
   aspect-ratio: 16 / 9;
   /* landscape is pretty easy. It can be width 100%
