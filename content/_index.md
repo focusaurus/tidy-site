@@ -112,7 +112,7 @@ Code: {{ github(path="sass/_core-layout.scss") }} the float mixin.
 
 I kind of hate all mobile navigation and hamburger menus, but couldn't commit to making the hamburger menu just anchor link to the footer navigation and be done with it, so I implemented one. There's not too much special here you won't find clicking around a web search, but I do want to point out that &amp;equiv; and &amp;times; are great HTML escaped elements to use for your open/close buttons and there's no need for images, SVGs, or bizarre creation of hamburger menu out of div tags and CSS (which I definitely saw in some of the more terrible samples out there).
 
-I share content for both the nav popup menu and the site footer with a zola/terra partial in {{ github(path="templates/partials/nav.html") }}. There's some fancy <code>a + a</code> CSS selector stuff to automatically separate the footer links with a vertical bar which is pretty neat.
+I share content for both the nav popup menu and the site footer with a zola/tera partial in {{ github(path="templates/partials/nav.html") }}. There's some fancy <code>a + a</code> CSS selector stuff to automatically separate the footer links with a vertical bar which is pretty neat.
 
 Code: {{ github(path="sass/_navigation.scss") }}
 
