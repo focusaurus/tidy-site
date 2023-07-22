@@ -101,8 +101,6 @@ And here's an example video in portrait orientation.
 
 Code: {{ github(path="tempates/shortcodes/youtube.html") }} and  {{ github(path="sass/_core-videos.css") }}
 
-## Image Float Option
-
 <div class="demo-float">
 <img src="https://placekitten.com/320/350">
 <p>Just for funzies, we can do a responsive image float, too. This starts mobile-first as single column, but on bigger screens the image floats on the right. SASS has a nice way to parameterize this mixin for left and right floats. I should also note that this is the <em>ONLY</em> use of CSS media query breakpoints I use on this site.</p>
@@ -140,4 +138,4 @@ Code: {{ github(path="sass/_images.scss") }}
 
 ## Known Issues
 
-Sass doesn't handle the slash syntax necessary for CSS `aspect-ratio: 16 / 9`. It wants to parse it as a division operator. I haven't found a solution for this so I work around it by using direct CSS for `_core-videos.css` instead of sass.
+None remaining! My issues with responsive videos and libsass workarounds are all solved with zola 0.17.2.
