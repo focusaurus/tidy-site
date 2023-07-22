@@ -87,15 +87,19 @@ To handle markdown unfortunately wrapping images in paragraph tags, we need some
 
 ## Layout for videos
 
-Youtube videos are trickier as they embed with the `iframe` tag. I [found a solution in this article](https://techstacker.com/how-to-responsive-youtube-videos/) to make them responsive. It's hacky since it involves some empty element nonsense, but it works.
+One thing that I love from zola is it's [shortcodes](https://www.getzola.org/documentation/content/shortcodes/) feature (borrowed from WordPress), so to embed a video in a markdown file, I just need <code>youtube(id="FEnRpy9Xfes" orientation="landscape")</code> inside a tera template snippet. So tidy! This also comes in completely essential in terms of DRY when you have dozens of these sprinkled across your site's content and you decide you want to tweak the HTML markup for them. Life saver.
 
-The linked article will explain the HTML and CSS necessary to get this to work. Wrapping our section in our <code>&lt;section class="grid"&gt;</code> tag applies the max width.
+We handle youtube iframe tags in an elegant and responsive way with the relatively new CSS `aspect-ratio` property.
 
-One thing that I love from zola is it's [shortcodes](https://www.getzola.org/documentation/content/shortcodes/) feature (borrowed from WordPress), so to embed a video in a markdown file, I just need <code>youtube(id="FEnRpy9Xfes")</code> inside a tera template snippet. So tidy! This also comes in completely essential in terms of DRY when you have dozens of these sprinkled across your site's content and you decide you want to tweak the HTML markup for them. Life saver.
+Here's an example video in landscape orientation.
 
-Code: {{ github(path="tempates/shortcodes/youtube.html") }} and  {{ github(path="sass/_videos.scss") }}
+{{ youtube(id="FEnRpy9Xfes" orientation="landscape") }}
 
-{{ youtube(id="FEnRpy9Xfes") }}
+And here's an example video in portrait orientation.
+
+{{ youtube(id="heeVSrrWo9c" orientation="portrait") }}
+
+Code: {{ github(path="tempates/shortcodes/youtube.html") }} and  {{ github(path="sass/_core-videos.css") }}
 
 ## Image Float Option
 
@@ -133,9 +137,7 @@ So far our content has been pretty table-stakes stuff you must address to have a
 
 Code: {{ github(path="sass/_images.scss") }}
 
-<section class="grid">
 
 ## Known Issues
 
-* Everywhere you see <code>unquote()</code> in the SCSS, disregard it. It's working around [this bug in zola/libsass](https://github.com/getzola/zola/issues/2022). It'll probably be a long time, but eventually I expect zola to switch to bundling a rust-based SASS implementation and hopefully this issue gets resolved.
-</section>
+Sass doesn't handle the slash syntax necessary for CSS `aspect-ratio: 16 / 9`. It wants to parse it as a division operator. I haven't found a solution for this so I work around it by using direct CSS for `_core-videos.css` instead of sass.

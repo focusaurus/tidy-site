@@ -1,0 +1,37 @@
+/* The approach to video iframes we use comes from this article
+ * https://dev.to/deammer/embed-responsive-youtube-videos-in-2021-5dkh
+ */
+
+/* This file is plain CSS instead of .scss
+ * because scss itself doesn't support slash notation
+ * we need for aspect-ratio and zola/grass don't seem
+ * to handle the list.slash(16, 9); helper function notation either.
+ */
+.video-landscape {
+  aspect-ratio: 16 / 9;
+  /* landscape is pretty easy. It can be width 100%
+   * and that works pretty well on most screens.
+   */
+  width: 100%;
+}
+
+.video-portrait {
+  aspect-ratio: 9 / 16;
+
+  /* on small screens like phones, portrait videos can
+   * fill most of the screen and should fit OK
+   */
+  width: 95%;
+
+  /* on larger screen like tablets, reduce size so
+   * the full video height fits on the screen
+   */
+  @media (min-width: 700px) {
+    width: 70%;
+  }
+
+  /* desktops even smaller so it fits vertically */
+  @media (min-width: 1000px) {
+    width: 60%;
+  }
+}
