@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Put a useful meta description here for search engines etc"
+      content="{{ section.description }}"
     />
     <meta
       name="keywords"
       content="static site generator backend developer tidy zola CSS3 grid tera template markdown"
     />
 
+    <meta property="og:url" content="{{ section.permalink }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ section.title }}">
+    <meta property="og:description" content="{{ section.description}}">
+    <meta property="og:image" content="tidy-site.png">
     {% endblock meta -%} {# Formatting is weird here to avoid leading/trailing
     whitespace within tags #}
     <title>
