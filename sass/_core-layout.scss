@@ -20,6 +20,9 @@ $pad: 1em;
     // fill their first line. They look a bit weird centered,
     // so left align them.
     justify-self: left;
+    // necessary for markdown images wrapped in paragraphs
+    // in firefox
+    width: 100%;
   }
 
   // I don't like this but it's necessary to keep stuff like

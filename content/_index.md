@@ -133,8 +133,9 @@ So far our content has been pretty table-stakes stuff you must address to have a
 <img src="https://placekitten.com/800/600">
 </section>
 
+<section class="grid">
 Code: {{ github(path="sass/_images.scss") }}
-
+</section>
 
 <section class="grid">
 
