@@ -5,7 +5,7 @@ $pad: 1em;
 // It is mobile-first and as screen size allows additional columns are introduced side by side
 @mixin centered-column {
   display: grid;
-  grid-template-columns: min(90vw, 40em);
+  grid-template-columns: min(90vw, 75ch);
   justify-content: center; // unclear if this is needed/correct
   justify-items: center;
   padding: $pad $pad;
@@ -29,7 +29,7 @@ $pad: 1em;
   // the mailchimp div from overflowing the grid and forcing
   // horizontal scrollbars
   * {
-    max-width: min(100%, 40em);
+    max-width: min(100%, 75ch);
   }
 
   // Work around markdown wrapping images
