@@ -73,17 +73,17 @@ We do allow for full-width content which is techincally the default since our <c
 
 We set `max-width: 100%` on the multimedia tags like `img`, `svg`, and `canvas` and that prevents them from overflowing and making a horizontal scrollbar on small screens. 
 
-Here's a 1200px placekitten to demonstrate.
+Here's a 1200px image to demonstrate.
 
-![](https://placekitten.com/1200)
+![](https://loremflickr.com/1200/1200/orchestra)
 
-And here's a narrow placekitten with an image tag as a direct child of our section container that should be centered.
+And here's a narrow image with an image tag as a direct child of our section container that should be centered.
 
-<img src="https://placekitten.com/290">
+<img src="https://loremflickr.com/290/290/orchestra?lock=209">
 
 To handle markdown unfortunately wrapping images in paragraph tags, we need some additional styles to center this narrow image.
 
-![](https://placekitten.com/295)
+![](https://loremflickr.com/295/295/orchestra)
 
 ## Layout for videos
 
@@ -104,7 +104,7 @@ Code: {{ github(path="tempates/shortcodes/youtube.html") }} and  {{ github(path=
 ## Image Float Option
 
 <div class="demo-float">
-<img src="https://placekitten.com/320/350">
+<img src="https://loremflickr.com/320/350/orchestra">
 <p>Just for funzies, we can do a responsive image float, too. This starts mobile-first as single column, but on bigger screens the image floats on the right. SASS has a nice way to parameterize this mixin for left and right floats. I should also note that this is the <em>ONLY</em> use of CSS media query breakpoints I use on this site.</p>
 </div>
 
@@ -124,15 +124,15 @@ So far our content has been pretty table-stakes stuff you must address to have a
 </section>
 
 <section class="gallery">
-<img src="https://placekitten.com/400/300">
-<img src="https://placekitten.com/800/600">
-<img src="https://placekitten.com/400/300">
-<img src="https://placekitten.com/600/450">
-<img src="https://placekitten.com/800/600">
-<img src="https://placekitten.com/600/450">
-<img src="https://placekitten.com/400/300">
-<img src="https://placekitten.com/600/450">
-<img src="https://placekitten.com/800/600">
+<img src="https://loremflickr.com/400/300/orchestra?lock=201">
+<img src="https://loremflickr.com/800/600/orchestra?lock=202">
+<img src="https://loremflickr.com/400/300/orchestra?lock=203">
+<img src="https://loremflickr.com/600/450/orchestra?lock=204">
+<img src="https://loremflickr.com/800/600/orchestra?lock=205">
+<img src="https://loremflickr.com/600/450/orchestra?lock=206">
+<img src="https://loremflickr.com/400/300/orchestra?lock=207">
+<img src="https://loremflickr.com/600/450/orchestra?lock=208">
+<img src="https://loremflickr.com/800/600/orchestra?lock=209">
 </section>
 
 <section class="grid">
