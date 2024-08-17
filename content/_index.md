@@ -97,7 +97,7 @@ Here's an example video in landscape orientation.
 
 And here's an example video in portrait orientation.
 
-{{ youtube(id="PyLODCwe69g" orientation="portrait") }}
+{{ youtube(id="heeVSrrWo9c" orientation="portrait") }}
 
 Code: {{ github(path="tempates/shortcodes/youtube.html") }} and  {{ github(path="sass/_core-videos.css") }}
 
