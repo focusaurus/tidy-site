@@ -1,5 +1,6 @@
 +++
 title = "Home"
+description = "Demonstration of how I make websites with tidy HTML & CSS"
 +++
 <section class="grid">
 
