@@ -2,79 +2,79 @@
 @import "colors";
 
 $big: 48px;
-button.open-nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-right: 5px;
-  border: none;
-  font-size: $big;
-  background: transparent;
-  line-height: 0.8em;
-  text-decoration: none;
-  color: $brand-grey;
-  // Necessary to be above certain third party content
-  z-index: 1;
-  &:hover {
-    cursor: pointer;
-  }
-}
 
-nav.menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  display: none;
-  background-color: $brand-grey;
-  z-index: 1;
-  opacity: 95%;
-
-  button.close-nav {
-    position: absolute;
+@layer site {
+  button.open-nav {
+    position: fixed;
     top: 0;
-    right: 5px;
-    line-height: 0.8em;
+    right: 0;
+    margin-right: 5px;
     border: none;
-    background: transparent;
     font-size: $big;
+    background: transparent;
+    line-height: 0.8em;
+    text-decoration: none;
+    color: $brand-grey;
+    // Necessary to be above certain third party content
+    z-index: 1;
     &:hover {
       cursor: pointer;
     }
   }
 
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    font-size: 150%;
-    &:hover {
-      background-color: $brand-blue;
+  nav.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    background-color: $brand-grey;
+    z-index: 1;
+    opacity: 95%;
+
+    button.close-nav {
+      position: absolute;
+      top: 0;
+      right: 5px;
+      line-height: 0.8em;
+      border: none;
+      background: transparent;
+      font-size: $big;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      font-size: 150%;
+      &:hover {
+        background-color: $brand-blue;
+      }
+    }
+
+    &.open {
+      display: grid;
+      height: 100vh;
+      width: 100vw;
+      grid-template-columns: 1fr;
+      place-items: stretch;
     }
   }
 
-  &.open {
+  footer.grid {
     display: grid;
-    height: 100vh;
-    width: 100vw;
     grid-template-columns: 1fr;
-    place-items: stretch;
   }
-}
 
-footer.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-footer nav {
-  a {
-    text-decoration: none;
-  }
-  a + a {
-    &:before {
-      content: " | ";
+  footer nav {
+    a {
+      text-decoration: none;
+      display: block;
+      line-height: 200%;
     }
   }
 }

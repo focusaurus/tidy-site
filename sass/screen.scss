@@ -1,3 +1,4 @@
+@layer core, site, page;
 // Files prefixed with "core-*" are intended to be site agnostic
 // and ready to copy into any similar project without modification.
 
@@ -20,11 +21,13 @@
 @import "_index";
 
 // If you have any styles for this site overall, they can go directly in this file.
-code {
-  background-color: $brand-grey;
-}
+@layer site {
+  code {
+    background-color: $brand-grey;
+  }
 
-.github {
-  background-color: $brand-grey;
-  color: black;
+  .github {
+    background-color: $brand-grey;
+    color: black;
+  }
 }

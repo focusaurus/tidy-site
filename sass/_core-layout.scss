@@ -58,12 +58,14 @@ $pad: 1em;
   }
 }
 
-canvas,
-iframe,
-select,
-textarea,
-img,
-video,
-svg {
-  max-width: 100%;
+@layer core {
+  canvas,
+  iframe,
+  select,
+  textarea,
+  img,
+  video,
+  svg {
+    max-width: 100%;
+  }
 }
