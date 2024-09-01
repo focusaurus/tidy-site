@@ -5,10 +5,9 @@
 // This is a recent version of the open source CSS normalize project
 // https://necolas.github.io/normalize.css/
 @import "_core-normalize";
-
 // This is core layout styles that can be copied as-is to any similar site.
 @import "_core-layout";
-
+@import "_core-fonts";
 @import "_core-videos";
 
 // This non-core layout has any styles that are custom for this site
