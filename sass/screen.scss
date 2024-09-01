@@ -21,6 +21,9 @@
 
 // If you have any styles for this site overall, they can go directly in this file.
 @layer site {
+  html {
+    font-family: "Mulish", sans-serif;
+  }
   code {
     background-color: $brand-grey;
   }

@@ -1,7 +1,6 @@
-$breakpoint: 42em;
-
 @layer site {
   html {
-    font-family: "Mulish", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
   }
 }
