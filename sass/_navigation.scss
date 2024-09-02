@@ -14,11 +14,13 @@ $big: 48px;
     background: transparent;
     line-height: 0.8em;
     text-decoration: none;
-    color: $brand-grey;
     // Necessary to be above certain third party content
     z-index: 1;
     &:hover {
       cursor: pointer;
+    }
+    &.open {
+      display: none;
     }
   }
 
