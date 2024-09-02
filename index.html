@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Demonstration of how I make websites with tidy HTML &amp; CSS"
+    />
+    <meta
+      name="keywords"
+      content="static site generator backend developer tidy zola CSS3 grid tera template markdown"
+    />
+    <meta property="og:url" content="https:&#x2F;&#x2F;focusaurus.github.io&#x2F;tidy-site&#x2F;">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="Demonstration of how I make websites with tidy HTML &amp; CSS">
+    <meta property="og:image" content="tidy-site.png">
+    
+    <title>
+      Home| Tidy Site
+      </title>
+
+    <link rel="stylesheet" href="screen.css" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <script>
+      </script>
+  </head>
+  <body>
+
+    <button class="open-nav">&equiv;</button>
+    <nav class="menu">
+      <button class="close-nav">&times;</button>
+      <a href="#mobile-first-and-responsive">Mobile first</a>
+<a href="#layout-basics">Layout basics</a>
+<a href="#full-width-content">Full-width content</a>
+<a href="#layout-for-images">Layout for images</a>
+<a href="#layout-for-videos">Layout for videos</a>
+<a href="#image-float-option">Image float option</a>
+<a href="#mobile-navigation-menu">Mobile navigation</a>
+<a href="#responsive-photo-grid-challenge">Responsive photo grid</a>
+</nav>
+
+    <main>
+<section class="grid">
+<h1 id="welcome-to-tidy-site">Welcome to Tidy Site</h1>
+<p>This site serves to demonstrate how I set up a fairly minimal static website that ticks all of my back-end engineer boxes. The source code is over at <a href="https://github.com/focusaurus/tidy-site">github.com/focusaurus/tidy-site</a>.</p>
+<h2 id="tech-stack">Tech Stack</h2>
+<ul>
+<li><a href="https://getzola.org">zola</a> static site generator
+<ul>
+<li>Uses nice <a href="https://tera.netlify.app/">tera</a> templates
+<ul>
+<li>I like the inheritence and block override mechanism</li>
+<li>Useful filters</li>
+</ul>
+</li>
+<li>shortcodes a la WordPress are great</li>
+<li>It's in rust and I'm biased toward rust</li>
+</ul>
+</li>
+<li><a href="https://sass-lang.com/">SCSS</a> for CSS nesting and processing</li>
+<li><a href="https://www.markdownguide.org/">markdown</a> for simple text content markup</li>
+</ul>
+<h2 id="inspiration">Inspiration</h2>
+<p>While I admire the minimalism, I can't quite bring myself to go full <a href="https://danluu.com/">Dan Luu mode</a> with almost no CSS. I love the look of <a href="https://kind.engineering">Kind Engineering</a>, which I was hoping to study and copy, but when I viewed source it seems to be a squarespace template full of limitless complexity, breakpoints galore, <code>!important</code>, and generated code so I'll take the design and leave the implementation.</p>
+<h2 id="semantic-html-mostly">Semantic HTML (mostly)</h2>
+<p>A lot of the &quot;tidiness&quot; that I seek has to do with strong limits to the amount of non-semantic HTML I need to sprinkle into my markup. I think SCSS mixins help a lot with this so I generally try to just add a single semantic class in my HTML and then apply a mixin to that. So for example, I might have <code>&lt;section class=&quot;intro&quot;&gt;</code> and then in the SCSS I'll link that to it's style with <code>section.intro { @include centered-column; }</code></p>
+<h2 id="keeping-colors-tidy">Keeping Colors Tidy</h2>
+<p>I put all my custom brand colors in as SASS variables, import them where needed with <code>@import &quot;colors&quot;;</code> and that keeps things tidy and easy to tweak. I prefix the variables with <code>$brand-</code> for easy grepping to find all use of custom colors.</p>
+<p>Code: <a class="github" href="https://github.com/focusaurus/tidy-site/blob/main/sass&#x2F;_colors.scss" target="_blank">sass&#x2F;_colors.scss</a>
+</p>
+<h2 id="mobile-first-and-responsive">Mobile-first and Responsive</h2>
+<h3 id="small-screens">Small screens</h3>
+<ul>
+<li>design scales down to iPhone SE 375px width </li>
+<li>No horizontal scrolling</li>
+<li>Handles large images, videos, etc</li>
+<li>Fonts are sized for readability without extra zooming for most folks</li>
+</ul>
+<h3 id="large-desktop-screens">Large Desktop screens</h3>
+<ul>
+<li>looks fine on large desktop screens</li>
+<li>maximum content width applied so paragraphs stay readable</li>
+<li>content can easily be centered so extra space is even on left and right sides</li>
+</ul>
+<h2 id="layout-basics">Layout Basics</h2>
+<p>The file <a class="github" href="https://github.com/focusaurus/tidy-site/blob/main/sass&#x2F;_core-layout.scss" target="_blank">sass&#x2F;_core-layout.scss</a>
+ handles our basic solution. There's a SCSS mixin called <code>centered-column</code> which uses CSS grid and a clever <code>max-width</code> to make our opt-in center column work properly.</p>
+<h2 id="font-sizes">Font Sizes</h2>
+<p>Over many years, web designers have blogged so many terrible font size hacks full of magic numbers, weird scaling, etc. I looked at some more modern approaches based on <code>vw</code> units and CSS <code>calc</code>, but there were still just too many shenanigans going on.</p>
+<p>Happily though, I think the answer might be as simple as: 18px for body and larger in small increments for headings.</p>
+<p>Someone prove me wrong or something. I can read this site fine on phones, tablets, and desktops in portrait and landscape mode and there's no deep magic going on with font sizes.</p>
+<h2 id="full-width-content">Full Width Content</h2>
+</section>
+<section style="background-color: #ddd; padding: 1em;">
+We do allow for full-width content which is techincally the default since our <code>centered-column</code> mixin is opt-in. This paragraph demonstrates this since the light grey background color goes full width. I find this useful for full-page background images, some other types of image galleries and so on.
+</section>
+<section class="grid">
+<h2 id="layout-for-images">Layout for images</h2>
+<p>We set <code>max-width: 100%</code> on the multimedia tags like <code>img</code>, <code>svg</code>, and <code>canvas</code> and that prevents them from overflowing and making a horizontal scrollbar on small screens. </p>
+<p>Here's a 1200px image to demonstrate.</p>
+<p><img src="https://loremflickr.com/1200/1200/orchestra" alt="" /></p>
+<p>And here's a narrow image with an image tag as a direct child of our section container that should be centered.</p>
+<img src="https://loremflickr.com/290/290/orchestra?lock=209">
+<p>To handle markdown unfortunately wrapping images in paragraph tags, we need some additional styles to center this narrow image.</p>
+<p><img src="https://loremflickr.com/295/295/orchestra" alt="" /></p>
+<h2 id="layout-for-videos">Layout for videos</h2>
+<p>One thing that I love from zola is it's <a href="https://www.getzola.org/documentation/content/shortcodes/">shortcodes</a> feature (borrowed from WordPress), so to embed a video in a markdown file, I just need <code>youtube(id=&quot;FEnRpy9Xfes&quot; orientation=&quot;landscape&quot;)</code> inside a tera template snippet. So tidy! This also comes in completely essential in terms of DRY when you have dozens of these sprinkled across your site's content and you decide you want to tweak the HTML markup for them. Life saver.</p>
+<p>We handle youtube iframe tags in an elegant and responsive way with the relatively new CSS <code>aspect-ratio</code> property.</p>
+<p>Here's an example video in landscape orientation.</p>
+<iframe class="video-landscape" src="https://www.youtube-nocookie.com/embed/FEnRpy9Xfes" allowfullscreen></iframe>
+<p>And here's an example video in portrait orientation.</p>
+<iframe class="video-portrait" src="https://www.youtube-nocookie.com/embed/heeVSrrWo9c" allowfullscreen></iframe>
+<p>Code: <a class="github" href="https://github.com/focusaurus/tidy-site/blob/main/tempates&#x2F;shortcodes&#x2F;youtube.html" target="_blank">tempates&#x2F;shortcodes&#x2F;youtube.html</a>
+ and  <a class="github" href="https://github.com/focusaurus/tidy-site/blob/main/sass&#x2F;_core-videos.css" target="_blank">sass&#x2F;_core-videos.css</a>
+</p>
+<h2 id="image-float-option">Image Float Option</h2>
+<div class="demo-float">
+<img src="https://loremflickr.com/320/350/orchestra">
+<p>Just for funzies, we can do a responsive image float, too. This starts mobile-first as single column, but on bigger screens the image floats on the right. SASS has a nice way to parameterize this mixin for left and right floats. I should also note that this is the <em>ONLY</em> use of CSS media query breakpoints I use on this site.</p>
+</div>
+<p>Code: <a class="github" href="https://github.com/focusaurus/tidy-site/blob/main/sass&#x2F;_core-layout.scss" target="_blank">sass&#x2F;_core-layout.scss</a>
+ the float mixin.</p>
+<h2 id="mobile-navigation-menu">Mobile Navigation Menu</h2>
+<p>I kind of hate all mobile navigation and hamburger menus, but couldn't commit to making the hamburger menu just anchor link to the footer navigation and be done with it, so I implemented one. There's not too much special here you won't find clicking around a web search, but I do want to point out that &amp;equiv; and &amp;times; are great HTML escaped elements to use for your open/close buttons and there's no need for images, SVGs, or bizarre creation of hamburger menu out of div tags and CSS (which I definitely saw in some of the more terrible samples out there).</p>
+<p>I share content for both the nav popup menu and the site footer with a zola/tera partial in <a class="github" href="https://github.com/focusaurus/tidy-site/blob/main/templates&#x2F;partials&#x2F;nav.html" target="_blank">templates&#x2F;partials&#x2F;nav.html</a>
+. There's some fancy <code>a + a</code> CSS selector stuff to automatically separate the footer links with a vertical bar which is pretty neat.</p>
+<p>Code: <a class="github" href="https://github.com/focusaurus/tidy-site/blob/main/sass&#x2F;_navigation.scss" target="_blank">sass&#x2F;_navigation.scss</a>
+</p>
+<h2 id="responsive-photo-grid-challenge">Responsive Photo Grid Challenge</h2>
+<p>So far our content has been pretty table-stakes stuff you must address to have a realistic useful web site. For a specific site I was working on, I had a photo grid challenge that I was able to address with CSS Grid and <code>auto-fill</code>, so I'll show it off here just because it's kind of neat. It makes a seamless grid with as many columns/rows as the screen will fit. I don't fully understand all the limitations, but I made all the images 4:3 aspect ratio, but not all identical size, and I used <code>place-items: stretch</code> and it seems to work.</p>
+</section>
+<section class="gallery">
+<img src="https://loremflickr.com/400/300/orchestra?lock=201">
+<img src="https://loremflickr.com/800/600/orchestra?lock=202">
+<img src="https://loremflickr.com/400/300/orchestra?lock=203">
+<img src="https://loremflickr.com/600/450/orchestra?lock=204">
+<img src="https://loremflickr.com/800/600/orchestra?lock=205">
+<img src="https://loremflickr.com/600/450/orchestra?lock=206">
+<img src="https://loremflickr.com/400/300/orchestra?lock=207">
+<img src="https://loremflickr.com/600/450/orchestra?lock=208">
+<img src="https://loremflickr.com/800/600/orchestra?lock=209">
+</section>
+<section class="grid">
+Code: <a class="github" href="https://github.com/focusaurus/tidy-site/blob/main/sass&#x2F;_images.scss" target="_blank">sass&#x2F;_images.scss</a>
+
+</section>
+<section class="grid">
+<h2 id="known-issues">Known Issues</h2>
+<p>None remaining! My issues with responsive videos and libsass workarounds are all solved with zola 0.17.2.</p>
+</section>
+
+</main>
+
+    <footer class="grid">
+      <nav><a href="#mobile-first-and-responsive">Mobile first</a>
+<a href="#layout-basics">Layout basics</a>
+<a href="#full-width-content">Full-width content</a>
+<a href="#layout-for-images">Layout for images</a>
+<a href="#layout-for-videos">Layout for videos</a>
+<a href="#image-float-option">Image float option</a>
+<a href="#mobile-navigation-menu">Mobile navigation</a>
+<a href="#responsive-photo-grid-challenge">Responsive photo grid</a>
+</nav>
+      </footer>
+    <script type="text/javascript" src="navigation.js"></script>
+  </body>
+</html>
